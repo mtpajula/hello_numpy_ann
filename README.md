@@ -2,7 +2,7 @@
 # Neural Network Demo with numpy
 
 
-This project implements a simple neural network using `numpy` to solve the XOR problem. The neural network is designed in an object-oriented style and includes functionalities for saving and loading the model.
+This project implements a simple neural network using `numpy`. The neural network is designed in an object-oriented style and includes functionalities for saving and loading the model.
 
 ## Getting Started
 
@@ -10,10 +10,11 @@ This project implements a simple neural network using `numpy` to solve the XOR p
 
 - Python 3.x
 - `numpy` library
+- `matplotlib` library (for visualizing the dataset)
 
-You can install `numpy` using pip:
+You can install requirments using pip:
 ```bash
-pip install numpy
+pip install -r requirements.txt
 ```
 
 ## Example Usage
