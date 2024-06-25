@@ -8,7 +8,7 @@ This project implements a simple neural network using `numpy`. The neural networ
 
 ### Prerequisites
 
-- Python 3.x
+- Python 3.x (Developed with 3.12)
 - `numpy` library
 - `matplotlib` library (for visualizing the dataset)
 - `scikit-learn` library (to access iris dataset)
