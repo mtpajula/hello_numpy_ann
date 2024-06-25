@@ -29,13 +29,11 @@ def generate_dataset(num_samples=1000):
 
 # Generate and plot the dataset
 X, y = generate_dataset()
+plt.figure()
 plt.scatter(X[:, 0], X[:, 1], c=y.flatten(), cmap='bwr')
 plt.xlabel('Feature 1')
 plt.ylabel('Feature 2')
 plt.title('Generated Dataset')
-plt.show()
-
-
 
 # Create the neural network
 nn = NeuralNetwork()
@@ -50,7 +48,7 @@ X, y = generate_dataset(num_samples=1000)
 X = X / np.max(np.abs(X), axis=0)
 
 # Train the neural network
-nn.fit(X, y, epochs=1000, learning_rate=0.01)
+nn.fit(X, y, epochs=10000, learning_rate=0.01)
 
 # Save the trained model
 save_model(nn, 'binary_classification_model.pkl')
@@ -64,9 +62,15 @@ predictions_loaded = (predictions_loaded > 0.5).astype(int)  # Convert to binary
 accuracy = np.mean(predictions_loaded == y)
 print(f"Accuracy of the loaded model: {accuracy * 100:.2f}%")
 
+# Plot training loss
+plt.figure()
+plt.plot(nn.losses)
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.title('Training Loss')
 
-# Generate and plot the dataset
-X, y = generate_dataset()
+# plot the dataset with predictions
+plt.figure()
 plt.scatter(X[:, 0], X[:, 1], c=predictions_loaded.flatten(), cmap='bwr')
 plt.xlabel('Feature 1')
 plt.ylabel('Feature 2')

@@ -23,6 +23,7 @@ class NeuralNetwork:
             d_output = layer.backward(d_output, learning_rate)
     
     def fit(self, X, y, epochs, learning_rate):
+        self.losses = []
         # Training loop
         for epoch in range(epochs):
             # Forward pass
@@ -30,6 +31,7 @@ class NeuralNetwork:
             
             # Compute loss (mean squared error)
             loss = np.mean((output - y) ** 2)
+            self.losses.append(loss)
             if epoch % 100 == 0 or epoch == epochs - 1:
                 print(f"Epoch {epoch+1}/{epochs}, Loss: {loss}")
             
