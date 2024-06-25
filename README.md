@@ -11,6 +11,7 @@ This project implements a simple neural network using `numpy`. The neural networ
 - Python 3.x
 - `numpy` library
 - `matplotlib` library (for visualizing the dataset)
+- `scikit-learn` library (to access iris dataset)
 
 You can install requirments using pip:
 ```bash
