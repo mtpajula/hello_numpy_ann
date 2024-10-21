@@ -13,9 +13,9 @@ class Dense:
         # Store input for use in backward pass
         self.input = input
         # Linear transformation
-        self.z = np.dot(input, self.weights) + self.biases
+        z = np.dot(input, self.weights) + self.biases
         # Apply activation function if any
-        self.output = self.z if self.activation is None else self.activation.forward(self.z)
+        self.output = z if self.activation is None else self.activation.forward(z)
         return self.output
     
     def backward(self, d_output, learning_rate):
